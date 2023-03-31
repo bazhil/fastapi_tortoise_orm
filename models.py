@@ -7,6 +7,9 @@ class Article(models.Model):
     title = fields.CharField(max_length=55)
     description = fields.CharField(max_length=255)
 
+    class PydanticMeta:
+        pass
+
 
 ArticlePydantic = pydantic_model_creator(Article, name='Article')
 ArticleInPydantic = pydantic_model_creator(Article, name='ArticleIn')
